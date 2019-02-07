@@ -2,20 +2,20 @@ version: "3"
 
 services:
   registry:
-    image: registry:latest
-    restart: always
-    volumes:
-      - "registry:/var/lib/registry"
-      - "./data/auth:/auth"
-      - "./data/certs:/certs"
-    ports:
-      - "5000:5000"
     environment:
       REGISTRY_AUTH: "htpasswd"
-      REGISTRY_AUTH_HTPASSWD_REALM: "Registry Realm"
       REGISTRY_AUTH_HTPASSWD_PATH: "/auth/htpasswd"
-      REGISTRY_HTTP_TLS_CERTIFICATE: "/certs/depotcore-dev.velocity.org.crt"
-      REGISTRY_HTTP_TLS_KEY: "/certs/depotcore-dev.velocity.org.key"
+      REGISTRY_AUTH_HTPASSWD_REALM: "Registry Realm"
+      REGISTRY_HTTP_TLS_CERTIFICATE: "/certs/${hostname}.crt"
+      REGISTRY_HTTP_TLS_KEY: "/certs/${hostname}.key"
+    image: registry:latest
+    ports:
+      - "5000:5000"
+    restart: always
+    volumes:
+      - "./data/auth/:/auth/"
+      - "./data/certs/:/certs/"
+      - "registry:/var/lib/registry"
 
 volumes:
   registry:

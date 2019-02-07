@@ -3,6 +3,7 @@
 /data/certs/*
 
 .env
+.env.production
 .directory
 
 !.gitkeep
