@@ -1,0 +1,9 @@
+/data/*
+/data/auth/*
+/data/certs/*
+
+.env
+.directory
+
+!.gitkeep
+!*/
