@@ -1,3 +1,3 @@
 # How to setup registry docker container, a docker registry service
 
-* Please run the docker-up_env.sh to setup.
+* Please copy the .env.example to .env and edit the values before running docker-compose up.

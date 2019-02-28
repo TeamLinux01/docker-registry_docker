@@ -6,11 +6,11 @@ services:
       REGISTRY_AUTH: "htpasswd"
       REGISTRY_AUTH_HTPASSWD_PATH: "/auth/htpasswd"
       REGISTRY_AUTH_HTPASSWD_REALM: "Registry Realm"
-      REGISTRY_HTTP_TLS_CERTIFICATE: "/certs/${hostname}.crt"
-      REGISTRY_HTTP_TLS_KEY: "/certs/${hostname}.key"
+      REGISTRY_HTTP_TLS_CERTIFICATE: "/certs/${HOST_NAME}.crt"
+      REGISTRY_HTTP_TLS_KEY: "/certs/${HOST_NAME}.key"
     image: registry:latest
     ports:
-      - "${host_ip}:5000:5000"
+      - "${HOST_IP}:5000:5000"
     restart: always
     volumes:
       - "./overlay/auth/:/auth/"
