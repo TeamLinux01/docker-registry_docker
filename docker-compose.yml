@@ -13,9 +13,10 @@ services:
       - "${HOST_IP}:5000:5000"
     restart: always
     volumes:
-      - "./overlay/auth/:/auth/"
+      - "auth:/auth"
       - "./overlay/certs/:/certs/"
       - "registry:/var/lib/registry"
 
 volumes:
+  auth:
   registry:
