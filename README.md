@@ -14,4 +14,5 @@
   * rsync -azv *user*@*server*:/*folder*/*to*/*cert*.crt .
   * sudo cp -la *cert*.crt /etc/docker/certs.d/*server-name*:*port*/
     * This will copy the cert file, which must be the named exactly the same as the server url, from your server to the current directory and then create a hard-link copy to docker certs
-    * So if the name of the sever was **registry.server.local**, then the cert would be called **registry.server.local.crt**
+    * If the name of the sever was **registry.server.local**, then the cert would be called **registry.server.local.crt**
+    * If there is a bundled cert file, please use that one.
